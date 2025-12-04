@@ -319,3 +319,56 @@ tr:hover td {
   margin-left: 6px;
   color: #d4af37;              /* rich gold */
 }
+/* ============================================================
+   === MOBILE RESPONSIVE TWEAKS ================================
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .round-container {
+    padding: 20px 12px;
+    background-attachment: scroll; /* fixed backgrounds are janky on mobile */
+  }
+
+  .round-title {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    margin-bottom: 24px;
+  }
+
+  .section {
+    margin-bottom: 32px;
+    padding: 8px 10px;
+    border-left: none; /* gives you more horizontal space */
+  }
+
+  .section h2 {
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+  }
+
+  .table-block {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* KEY: table scrolls horizontally instead of squishing */
+  .table-block table {
+    font-size: 0.75rem;
+    min-width: 700px;
+  }
+
+  .table-block td {
+    padding: 4px 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .round-title {
+    font-size: 1.3rem;
+  }
+
+  .table-block table {
+    min-width: 650px;
+  }
+}
