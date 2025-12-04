@@ -1,6 +1,6 @@
-// === IMPORTS AT TOP ===
 import React, { useEffect, useState } from "react";
 import "./Round1.css";
+const API_BASE = "https://race-2-phuket.onrender.com";
 
 export default function Round6() {
   const [loading, setLoading] = useState(true);
@@ -8,10 +8,10 @@ export default function Round6() {
   const [standings, setStandings] = useState([]);
   const [strokes, setStrokes] = useState([]);
   const [points, setPoints] = useState([]);
-  const [overall, setOverall] = useState([]); // <- FINAL TABLE comes through here
+  const [overall, setOverall] = useState([]); // FINAL TABLE comes through here
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/api/round6")
+    fetch(`${API_BASE}/api/round6`)
       .then((r) => r.json())
       .then((json) => {
         if (json.status === "success") {

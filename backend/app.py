@@ -8,6 +8,14 @@ app = Flask(__name__)
 CORS(app)
 
 # ---------------------------------------------------------
+# ROOT ROUTE (for Render homepage)
+# ---------------------------------------------------------
+@app.route("/")
+def index():
+    return "Race 2 Phuket backend is running. Try /api/round1, /api/round2, ... /api/round6"
+
+
+# ---------------------------------------------------------
 # NAME CLEANER — removes invisible Excel characters
 # ---------------------------------------------------------
 def clean_name(value):
@@ -471,6 +479,7 @@ def read_overall_table(ws, round_count):
         )
     ]
     return overall
+
 
 # ---------------------------------------------------------
 # RUN SERVER (Deployment-ready)

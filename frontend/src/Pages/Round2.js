@@ -1,6 +1,7 @@
 // ✅ all imports must be at the top
 import React, { useEffect, useState } from "react";
 import "./Round1.css";
+const API_BASE = "https://race-2-phuket.onrender.com";
 
 export default function Round2() {
   const [loading, setLoading] = useState(true);
@@ -13,7 +14,8 @@ export default function Round2() {
   const [overall, setOverall] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/api/round2")
+    fetch(`${API_BASE}/api/round2`)
+
       .then((r) => r.json())
       .then((json) => {
         if (json.status === "success") {
